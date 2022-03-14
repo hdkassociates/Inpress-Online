@@ -1101,6 +1101,7 @@ padding: 20px;
 .entry-header img, .archive .page-header img {
     position: absolute;
     top: 0;
+	z-index: 10;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1141,7 +1142,7 @@ padding: 20px;
     margin-bottom: 20px;
 }
 
-.single h1.entry-title {
+h1.entry-title {
     color: unset;
     position: static;
     width: 85%;
@@ -1149,6 +1150,7 @@ padding: 20px;
     max-width: 965px;
     font-size: 2.8rem;
     font-style: normal;
+	text-align: center;
 }
 
 .single .entry-header::before {
