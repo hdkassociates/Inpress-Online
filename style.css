@@ -1096,6 +1096,9 @@ padding: 20px;
     justify-content: center;
     align-items: center;
     margin-bottom: 60px;
+	/* Safari z-index fix */
+	-webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .entry-header img, .archive .page-header img {
