@@ -32,14 +32,28 @@
 				if( get_row_layout() == 'title_field' ): 
 					echo '<h3>'.get_sub_field('title').'</h3>'; 
 				elseif( get_row_layout() == 'image_links' ):
+					$remove_tint_overlay = get_sub_field('remove_tint_overlay')? 'no-tint' : '';
 					$count = count(get_row()['field_5fd1c48a0e224']);
-						if( have_rows('image_link_repeater') ):  
-						echo '<div class="custom_image_link link_'.$count.'">';
-						
+
+					if( have_rows('image_link_repeater') ):  
+						echo '<div class="custom_image_link link_'.$count.' ' . $remove_tint_overlay . '">';
 						while( have_rows('image_link_repeater') ): the_row();
-							echo '<a href="'.get_sub_field('image_link_url').'"><img src="'.get_sub_field('image_link_image').'"><h4>'.get_sub_field('image_link_title').'</h4></a>';
+							if (get_sub_field('image_link_url')) : 
+								echo '<a href="'.get_sub_field('image_link_url').'">';
+							else : 
+								echo '<div class="wrapper">';
+							endif; 
+							echo '<img src="'.get_sub_field('image_link_image').'">';
+							if (get_sub_field('image_link_title')) : 
+								echo '<h4>'.get_sub_field('image_link_title').'</h4>'; 
+							endif; 
+							if (get_sub_field('image_link_url')) : 
+								echo '</a>';
+							else : 
+								echo '</div>';
+							endif;
 						endwhile;
-					echo '</div>';
+						echo '</div>';
 					endif;
 				elseif( get_row_layout() == 'wysiwyg_text' ):
 					echo '<div class="custom_text">'.get_sub_field('custom_text').'</div>';
