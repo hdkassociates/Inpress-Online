@@ -33,10 +33,11 @@
 					echo '<h3>'.get_sub_field('title').'</h3>'; 
 				elseif( get_row_layout() == 'image_links' ):
 					$remove_tint_overlay = get_sub_field('remove_tint_overlay')? 'no-tint' : '';
+					$increase_spacing = get_sub_field('increase_spacing')? 'increase-spacing' : '';
 					$count = count(get_row()['field_5fd1c48a0e224']);
 
 					if( have_rows('image_link_repeater') ):  
-						echo '<div class="custom_image_link link_'.$count.' ' . $remove_tint_overlay . '">';
+						echo '<div class="custom_image_link link_'.$count.' ' . $remove_tint_overlay . ' ' . $increase_spacing .'">';
 						while( have_rows('image_link_repeater') ): the_row();
 							if (get_sub_field('image_link_url')) : 
 								echo '<a href="'.get_sub_field('image_link_url').'">';
