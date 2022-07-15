@@ -128,7 +128,7 @@ add_action( 'after_setup_theme', 'inpress_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function inpress_scripts() {
-	wp_enqueue_style( 'inpress-style', get_stylesheet_uri(), array(), '20220629-3' );
+	wp_enqueue_style( 'inpress-style', get_stylesheet_uri(), array(), '20220715' );
 	wp_style_add_data( 'inpress-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'inpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
